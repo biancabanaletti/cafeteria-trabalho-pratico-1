@@ -8,7 +8,7 @@ function Consumidores() {
 
   const carregarConsumidores = async () => {
     try {
-      const resposta = await fetch('http://localhost:3001/consumidores');
+      const resposta = await fetch('https://cafeteria-api-bianca.onrender.com/consumidores');
       const dados = await resposta.json();
       setConsumidores(dados);
     } catch (erro) {
@@ -30,8 +30,8 @@ function Consumidores() {
 
     try {
       const url = idEditar
-        ? `http://localhost:3001/consumidores/${idEditar}`
-        : 'http://localhost:3001/consumidores';
+        ? `https://cafeteria-api-bianca.onrender.com/consumidores/${idEditar}`
+        : 'https://cafeteria-api-bianca.onrender.com/consumidores';
 
       const resposta = await fetch(url, {
         method: idEditar ? 'PUT' : 'POST',
@@ -66,7 +66,7 @@ function Consumidores() {
 
     try {
       const resposta = await fetch(
-        `http://localhost:3001/consumidores/${id}`,
+        `https://cafeteria-api-bianca.onrender.com/consumidores/${id}`,
         { method: 'DELETE' }
       );
 

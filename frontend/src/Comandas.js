@@ -10,12 +10,12 @@ function Comandas() {
 
   const carregarDados = async () => {
     try {
-      const respostaComandas = await fetch('http://localhost:3001/comandas');
+      const respostaComandas = await fetch('https://cafeteria-api-bianca.onrender.com/comandas');
       const dadosComandas = await respostaComandas.json();
       setComandas(dadosComandas);
 
       const respostaConsumidores = await fetch(
-        'http://localhost:3001/consumidores'
+        'https://cafeteria-api-bianca.onrender.com/consumidores'
       );
       const dadosConsumidores = await respostaConsumidores.json();
       setConsumidores(dadosConsumidores);
@@ -39,8 +39,8 @@ function Comandas() {
 
     try {
       const url = idEditar
-        ? `http://localhost:3001/comandas/${idEditar}`
-        : 'http://localhost:3001/comandas';
+        ? `https://cafeteria-api-bianca.onrender.com/comandas/${idEditar}`
+        : 'https://cafeteria-api-bianca.onrender.com/comandas';
 
       const resposta = await fetch(url, {
         method: idEditar ? 'PUT' : 'POST',
@@ -76,7 +76,7 @@ function Comandas() {
 
     try {
       const resposta = await fetch(
-        `http://localhost:3001/comandas/${id}`,
+        `https://cafeteria-api-bianca.onrender.com/comandas/${id}`,
         { method: 'DELETE' }
       );
 

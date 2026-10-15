@@ -9,7 +9,7 @@ function Cardapio() {
 
   const carregarItens = async () => {
     try {
-      const resposta = await fetch('http://localhost:3001/cardapio');
+      const resposta = await fetch('https://cafeteria-api-bianca.onrender.com/cardapio');
       const dados = await resposta.json();
       setItens(dados);
     } catch (erro) {
@@ -32,8 +32,8 @@ function Cardapio() {
 
     try {
       const url = idEditar
-        ? `http://localhost:3001/cardapio/${idEditar}`
-        : 'http://localhost:3001/cardapio';
+        ? `https://cafeteria-api-bianca.onrender.com/cardapio/${idEditar}`
+        : 'https://cafeteria-api-bianca.onrender.com/cardapio';
 
       const resposta = await fetch(url, {
         method: idEditar ? 'PUT' : 'POST',
@@ -69,7 +69,7 @@ function Cardapio() {
 
     try {
       const resposta = await fetch(
-        `http://localhost:3001/cardapio/${id}`,
+        `https://cafeteria-api-bianca.onrender.com/cardapio/${id}`,
         { method: 'DELETE' }
       );
 
