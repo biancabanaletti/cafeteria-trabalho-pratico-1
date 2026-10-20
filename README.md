@@ -64,3 +64,9 @@ consumidores.map(): cria as opções do campo de seleção de consumidores.
 consumidores.find(): procura o consumidor relacionado a cada comanda para mostrar seu nome na tabela.
 Number(): converte os valores de quantidade e ID para números.
 String(...).slice(0, 10): transforma a data em texto e mantém somente os primeiros dez caracteres, no formato AAAA-MM-DD.
+setTela(): altera a tela exibida.
+voltarInicio(): retorna à página inicial.
+import: importa os componentes, estilos e Bootstrap utilizados.
+Cardapio, Consumidores e Comandas: são componentes separados, cada um responsável por uma parte do sistema.
+Renderização condicional: os if e operadores ? : escolhem qual conteúdo será exibido conforme o valor de tela.
+onClick: executa uma ação quando o usuário clica em um botão.
