@@ -1,6 +1,8 @@
 Sistema de Gerenciamento de Cafeteria
 
-O frontend é responsável pela interface e pelas requisições. Quem executa as consultas SQL e acessa o PostgreSQL é o backend.
+O sistema permite gerenciar o cardápio, os consumidores e as comandas de uma cafeteria.
+
+O frontend é responsável pela interface e pelas requisições. O backend recebe essas requisições, executa as consultas SQL e acessa o banco de dados PostgreSQL hospedado no Neon.
 
 Site da Cafeteria: https://cafeteria-frontend-bianca.onrender.com
 
@@ -12,61 +14,158 @@ Testar API consumidores: https://cafeteria-api-bianca.onrender.com/consumidores
 
 Testar API comandas: https://cafeteria-api-bianca.onrender.com/comandas
 
+Backend:
 cd backend
 npm install
 npm start
 
+Frontend:
 cd frontend
 npm install
 npm start
 
-GET: lista os itens do cardápio.
-POST: cadastra um novo item.
-PUT: altera um item existente.
-DELETE: exclui um item.
+Métodos HTTP
+
+GET: lista os dados cadastrados.
+
+POST: cadastra um novo registro.
+
+PUT: altera um registro existente.
+
+DELETE: exclui um registro.
+
+Backend
+
 pool.query(): executa uma consulta SQL no banco de dados.
+
 try/catch: permite tratar erros que podem acontecer durante as operações.
-$1, $2, $3 e $4: são parâmetros usados na consulta SQL para receber os valores de forma parametrizada.
+
+$1, $2, $3 e $4: são parâmetros utilizados nas consultas SQL para receber valores de forma parametrizada.
+
 req.body: recebe os dados enviados pelo frontend.
-req.params: recebe o ID informado na URL.
+
+req.params: recebe os parâmetros informados na URL, como o ID do registro.
+
 res.json(): envia uma resposta em formato JSON.
+
 dotenv: carrega as configurações guardadas no arquivo .env.
+
 pg: é a biblioteca que permite ao Node.js se conectar ao PostgreSQL.
+
 Pool: gerencia as conexões utilizadas para executar consultas no banco.
-DATABASE_URL: contém o endereço de conexão com o banco de dados. No seu projeto, ele fica configurado nas variáveis de ambiente.
+
+DATABASE_URL: contém o endereço de conexão com o banco de dados e fica configurada nas variáveis de ambiente.
+
 ssl: configura a conexão segura com o banco hospedado na nuvem.
-module.exports = pool: permite que os outros arquivos, como as rotas, utilizem essa conexão.
+
+module.exports = pool: permite que outros arquivos utilizem a conexão com o banco.
+
 Express: facilita a criação do servidor e das rotas da API.
+
 CORS: permite que o frontend, hospedado em outro endereço, faça requisições para o backend.
-express.json(): permite que o servidor interprete dados recebidos em JSON.
-require(): importa os arquivos de rotas.
-app.use(): associa cada conjunto de rotas a um endereço da API.
+
+express.json(): permite que o servidor interprete os dados recebidos em JSON.
+
+require(): importa módulos e arquivos de rotas.
+
+app.use(): associa as rotas aos endereços da API e configura middlewares.
+
 app.get('/'): disponibiliza uma rota inicial para verificar se a API está funcionando.
-app.listen(): inicia o servidor na porta 3001.
-useState: guarda informações da tela, como os campos e a lista de itens.
-useEffect: carrega os itens quando a tela é aberta.
-fetch: faz requisições para a API hospedada no Render.
+
+app.listen(): inicia o servidor para receber requisições.
+
+Frontend
+
+useState: guarda informações da tela, como os campos do formulário e a lista de itens.
+
+useEffect: executa ações quando o componente é carregado ou quando suas dependências mudam.
+
+fetch: faz requisições para a API.
+
 async/await: permite trabalhar com operações assíncronas, como buscar dados.
-JSON.stringify(): transforma o objeto em texto JSON para enviá-lo à API.
-itens.map(): percorre a lista para montar as linhas da tabela.
-onChange: atualiza o estado quando o usuário digita nos campos.
-carregarConsumidores(): busca os dados na API.
-salvarConsumidor(): cadastra ou altera um consumidor.
-editarConsumidor(): preenche o formulário com os dados existentes.
-excluirConsumidor(): remove um consumidor após a confirmação.
-limparFormulario(): limpa os campos e encerra a edição.
-consumidores.map(): monta a tabela com os consumidores recebidos da API.
-carregarDados(): busca as comandas e os consumidores na API.
-salvarComanda(): cadastra ou altera uma comanda.
-editarComanda(): preenche o formulário com os dados da comanda selecionada.
-excluirComanda(): exclui uma comanda após a confirmação.
-consumidores.map(): cria as opções do campo de seleção de consumidores.
-consumidores.find(): procura o consumidor relacionado a cada comanda para mostrar seu nome na tabela.
-Number(): converte os valores de quantidade e ID para números.
-String(...).slice(0, 10): transforma a data em texto e mantém somente os primeiros dez caracteres, no formato AAAA-MM-DD.
+
+JSON.stringify(): transforma um objeto JavaScript em texto JSON para enviá-lo à API.
+
+map(): percorre uma lista para montar as linhas de uma tabela ou as opções de um campo.
+
+onChange: executa uma ação quando o valor de um campo é alterado.
+
 setTela(): altera a tela exibida.
+
 voltarInicio(): retorna à página inicial.
-import: importa os componentes, estilos e Bootstrap utilizados.
+
+import: importa componentes, estilos e bibliotecas utilizados.
+
 Cardapio, Consumidores e Comandas: são componentes separados, cada um responsável por uma parte do sistema.
-Renderização condicional: os if e operadores ? : escolhem qual conteúdo será exibido conforme o valor de tela.
+
+Renderização condicional: escolhe qual conteúdo será exibido conforme o valor da variável tela.
+
 onClick: executa uma ação quando o usuário clica em um botão.
+
+Funções do sistema
+
+Cardápio
+
+carregarItens(): busca os itens cadastrados na API.
+
+salvarItem(): cadastra ou altera um item.
+
+editarItem(): preenche o formulário com os dados de um item existente.
+
+excluirItem(): exclui um item após a confirmação.
+
+limparFormulario(): limpa os campos do formulário.
+
+itens.map(): percorre a lista de itens para montar a tabela.
+
+Consumidores
+
+carregarConsumidores(): busca os consumidores na API.
+
+salvarConsumidor(): cadastra ou altera um consumidor.
+
+editarConsumidor(): preenche o formulário com os dados existentes.
+
+excluirConsumidor(): remove um consumidor após a confirmação.
+
+limparFormulario(): limpa os campos e encerra a edição.
+
+consumidores.map(): monta a tabela com os consumidores recebidos da API.
+
+Comandas
+
+carregarDados(): busca as comandas e os consumidores na API.
+
+salvarComanda(): cadastra ou altera uma comanda.
+
+editarComanda(): preenche o formulário com os dados da comanda selecionada.
+
+excluirComanda(): exclui uma comanda após a confirmação.
+
+consumidores.map(): cria as opções do campo de seleção de consumidores.
+
+consumidores.find(): procura o consumidor relacionado a cada comanda para mostrar seu nome na tabela.
+
+Number(): converte valores, como quantidade e ID, para números.
+
+String(...).slice(0, 10): transforma a data em texto e mantém os primeiros dez caracteres, no formato AAAA-MM-DD.
+
+Tecnologias utilizadas
+
+JavaScript
+
+React
+
+Node.js
+
+Express
+
+PostgreSQL
+
+Neon
+
+Render
+
+Bootstrap
+
+Git e GitHub
