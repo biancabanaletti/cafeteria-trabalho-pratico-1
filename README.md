@@ -25,3 +25,6 @@ DELETE: exclui um item.
 pool.query(): executa uma consulta SQL no banco de dados.
 try/catch: permite tratar erros que podem acontecer durante as operações.
 $1, $2, $3 e $4: são parâmetros usados na consulta SQL para receber os valores de forma parametrizada.
+req.body: recebe os dados enviados pelo frontend.
+req.params: recebe o ID informado na URL.
+res.json(): envia uma resposta em formato JSON.
