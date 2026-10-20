@@ -9,3 +9,11 @@ Testar API cardapio: https://cafeteria-api-bianca.onrender.com/cardapio
 Testar API consumidores: https://cafeteria-api-bianca.onrender.com/consumidores
 
 Testar API comandas: https://cafeteria-api-bianca.onrender.com/comandas
+
+cd backend
+npm install
+npm start
+
+cd frontend
+npm install
+npm start
