@@ -20,6 +20,12 @@ PWA (Progressive Web App)
 
 - O frontend está hospedado no Render e se comunica com a API, que acessa o banco de dados PostgreSQL hospedado no Neon.
 
+- index.js: mostra o código que registra o Service Worker quando a página termina de carregar.
+
+- service-worker.js: contém a lógica do Service Worker, que pode controlar recursos como cache e funcionamento offline, dependendo da implementação.
+
+- manifest.json: contém as informações do aplicativo, como nome, ícones e modo de exibição na instalação.
+
 Backend:
 
 - cd backend
