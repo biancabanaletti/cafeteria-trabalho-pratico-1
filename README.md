@@ -56,3 +56,11 @@ editarConsumidor(): preenche o formulário com os dados existentes.
 excluirConsumidor(): remove um consumidor após a confirmação.
 limparFormulario(): limpa os campos e encerra a edição.
 consumidores.map(): monta a tabela com os consumidores recebidos da API.
+carregarDados(): busca as comandas e os consumidores na API.
+salvarComanda(): cadastra ou altera uma comanda.
+editarComanda(): preenche o formulário com os dados da comanda selecionada.
+excluirComanda(): exclui uma comanda após a confirmação.
+consumidores.map(): cria as opções do campo de seleção de consumidores.
+consumidores.find(): procura o consumidor relacionado a cada comanda para mostrar seu nome na tabela.
+Number(): converte os valores de quantidade e ID para números.
+String(...).slice(0, 10): transforma a data em texto e mantém somente os primeiros dez caracteres, no formato AAAA-MM-DD.
