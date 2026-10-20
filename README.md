@@ -34,3 +34,10 @@ Pool: gerencia as conexões utilizadas para executar consultas no banco.
 DATABASE_URL: contém o endereço de conexão com o banco de dados. No seu projeto, ele fica configurado nas variáveis de ambiente.
 ssl: configura a conexão segura com o banco hospedado na nuvem.
 module.exports = pool: permite que os outros arquivos, como as rotas, utilizem essa conexão.
+Express: facilita a criação do servidor e das rotas da API.
+CORS: permite que o frontend, hospedado em outro endereço, faça requisições para o backend.
+express.json(): permite que o servidor interprete dados recebidos em JSON.
+require(): importa os arquivos de rotas.
+app.use(): associa cada conjunto de rotas a um endereço da API.
+app.get('/'): disponibiliza uma rota inicial para verificar se a API está funcionando.
+app.listen(): inicia o servidor na porta 3001.
