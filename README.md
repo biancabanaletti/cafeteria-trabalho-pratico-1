@@ -50,3 +50,9 @@ async/await: permite trabalhar com operações assíncronas, como buscar dados.
 JSON.stringify(): transforma o objeto em texto JSON para enviá-lo à API.
 itens.map(): percorre a lista para montar as linhas da tabela.
 onChange: atualiza o estado quando o usuário digita nos campos.
+carregarConsumidores(): busca os dados na API.
+salvarConsumidor(): cadastra ou altera um consumidor.
+editarConsumidor(): preenche o formulário com os dados existentes.
+excluirConsumidor(): remove um consumidor após a confirmação.
+limparFormulario(): limpa os campos e encerra a edição.
+consumidores.map(): monta a tabela com os consumidores recebidos da API.
