@@ -1,5 +1,7 @@
 Sistema de Gerenciamento de Cafeteria
 
+O frontend é responsável pela interface e pelas requisições. Quem executa as consultas SQL e acessa o PostgreSQL é o backend.
+
 Site da Cafeteria: https://cafeteria-frontend-bianca.onrender.com
 
 API que conecta o frontend ao banco Neon: https://cafeteria-api-bianca.onrender.com
@@ -41,3 +43,10 @@ require(): importa os arquivos de rotas.
 app.use(): associa cada conjunto de rotas a um endereço da API.
 app.get('/'): disponibiliza uma rota inicial para verificar se a API está funcionando.
 app.listen(): inicia o servidor na porta 3001.
+useState: guarda informações da tela, como os campos e a lista de itens.
+useEffect: carrega os itens quando a tela é aberta.
+fetch: faz requisições para a API hospedada no Render.
+async/await: permite trabalhar com operações assíncronas, como buscar dados.
+JSON.stringify(): transforma o objeto em texto JSON para enviá-lo à API.
+itens.map(): percorre a lista para montar as linhas da tabela.
+onChange: atualiza o estado quando o usuário digita nos campos.
