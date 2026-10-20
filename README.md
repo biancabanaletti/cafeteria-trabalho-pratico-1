@@ -14,6 +14,12 @@ Site da Cafeteria: https://cafeteria-frontend-bianca.onrender.com
 
 - Testar API comandas: https://cafeteria-api-bianca.onrender.com/comandas
 
+PWA (Progressive Web App)
+
+- A aplicação frontend foi desenvolvida com React e utiliza os recursos de PWA para permitir uma experiência semelhante à de um aplicativo.
+
+- O frontend está hospedado no Render e se comunica com a API, que acessa o banco de dados PostgreSQL hospedado no Neon.
+
 Backend:
 
 - cd backend
