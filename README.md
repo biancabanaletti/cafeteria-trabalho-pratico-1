@@ -28,3 +28,9 @@ $1, $2, $3 e $4: são parâmetros usados na consulta SQL para receber os valores
 req.body: recebe os dados enviados pelo frontend.
 req.params: recebe o ID informado na URL.
 res.json(): envia uma resposta em formato JSON.
+dotenv: carrega as configurações guardadas no arquivo .env.
+pg: é a biblioteca que permite ao Node.js se conectar ao PostgreSQL.
+Pool: gerencia as conexões utilizadas para executar consultas no banco.
+DATABASE_URL: contém o endereço de conexão com o banco de dados. No seu projeto, ele fica configurado nas variáveis de ambiente.
+ssl: configura a conexão segura com o banco hospedado na nuvem.
+module.exports = pool: permite que os outros arquivos, como as rotas, utilizem essa conexão.
