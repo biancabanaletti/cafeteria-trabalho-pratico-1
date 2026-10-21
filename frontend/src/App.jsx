@@ -78,7 +78,7 @@ function App() {
           ) : tela === 'comandas' ? (
             <Comandas />
           ) : (
-            <p>Esta área será desenvolvida na próxima etapa.</p>
+            null
           )}
 
           {/* Botão para voltar à página inicial */}
